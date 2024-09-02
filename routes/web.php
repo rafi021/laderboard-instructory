@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Result;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $participants = Result::orderBy('total_addmission', 'desc')->get();
+    return view('welcome', ['participants' => $participants]);
 });
 
 Route::middleware([
