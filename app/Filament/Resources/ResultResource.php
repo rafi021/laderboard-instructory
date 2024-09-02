@@ -12,6 +12,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ResultResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -64,9 +65,7 @@ class ResultResource extends Resource
                     ->searchable()
                     ->toggleable(),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
